@@ -1,5 +1,6 @@
 #include "main.h"
 
+#define SystemClockFreq 16e6
 
 void delay_ms(uint32_t ms) {
     LL_mDelay(ms);  // Uses SysTick
@@ -8,8 +9,8 @@ void delay_ms(uint32_t ms) {
 int main(void)
 {
     // Configure system clock (needed for LL_mDelay)
-    LL_InitTick(16000000, 1000);  // Assuming HSI @ 16 MHz
-    LL_SetSystemCoreClock(16000000);  // Optional if not using CMSIS SysInit
+    LL_InitTick(SystemClockFreq, 1000);  // Assuming HSI @ 16 MHz
+    LL_SetSystemCoreClock(SystemClockFreq);  // Optional if not using CMSIS SysInit
 
     // Enable GPIOB clock
     LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOB);
