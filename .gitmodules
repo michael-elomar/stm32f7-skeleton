@@ -1,3 +1,3 @@
 [submodule "stm32f7xx_hal"]
 	path = stm32f7xx_hal
-	url = https://github.com/michael-elomar/stm32f7xx_hal.git
+	url = git@github.com:michael-elomar/stm32f7-skeleton.git
